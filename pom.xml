@@ -9,6 +9,9 @@
 
     <name>example</name>
     <url>https://maven.apache.org</url>
+    <modules>
+        <module>resource</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
