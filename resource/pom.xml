@@ -24,10 +24,9 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--nacos 注册配置中心-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
     </dependencies>
