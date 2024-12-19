@@ -13,6 +13,7 @@ import reactor.core.publisher.Mono;
  */
 @Component
 public class GatewayFilter implements GlobalFilter {
+
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
