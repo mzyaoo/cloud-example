@@ -29,5 +29,11 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>cn.mzyao.cloud</groupId>
+            <artifactId>plugins</artifactId>
+            <version>1.0</version>
+        </dependency>
+
     </dependencies>
 </project>
