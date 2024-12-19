@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: resource
+    name: resource-server
   cloud:
     nacos:
       discovery:

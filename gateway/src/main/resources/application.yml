@@ -1,7 +1,21 @@
+server:
+  port: 7811
+
 spring:
   application:
-    name: gateway
+    name: gateway-server
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: resource
+          uri: lb://resource-server # 注册中心中名为 resource-server 的服务
+          predicates:
+            - Path=/resource/** # 匹配路径，以 resource 开头的请求会转发到 resource-server 服务上
+          filters:
+            - StripPrefix=1 # 去掉路径前缀
