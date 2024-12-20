@@ -1,6 +1,7 @@
 package cn.mzyao.cloud.filter;
 
 
+import cn.hutool.core.util.StrUtil;
 import cn.mzyao.cloud.tools.exception.GatewayException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -8,7 +9,6 @@ import org.springframework.stereotype.Component;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -29,7 +29,7 @@ public class ServletGatewayFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         String gateway = request.getHeader("gatewayKey");
-        if (gateway == null || gateway.equals("") || !gateway.equals("key")) {
+        if (StrUtil.isEmpty(gateway) || !gateway.equals("key")) {
             throw new GatewayException(50003, "非法请求");
         }
         filterChain.doFilter(servletRequest, servletResponse);
@@ -39,4 +39,5 @@ public class ServletGatewayFilter implements Filter {
     public void destroy() {
         Filter.super.destroy();
     }
+
 }
