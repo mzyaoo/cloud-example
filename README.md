@@ -3,7 +3,8 @@
 ## 目录描述
 - gateway：网关模块
 - plugins：工具插件类模块
-- resource：资源模块
+- resource：资源接口模块
+- api：资源接口模块
 
 ## 版本说明
 - Spring Boot 2.7.18
