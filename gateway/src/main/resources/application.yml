@@ -19,3 +19,9 @@ spring:
             - Path=/resource/** # 匹配路径，以 resource 开头的请求会转发到 resource-server 服务上
           filters:
             - StripPrefix=1 # 去掉路径前缀
+        - id: api
+          uri: lb://api-server # 注册中心中名为 resource-server 的服务
+          predicates:
+            - Path=/api/** # 匹配路径，以 resource 开头的请求会转发到 resource-server 服务上
+          filters:
+            - StripPrefix=1 # 去掉路径前缀

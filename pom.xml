@@ -13,6 +13,7 @@
         <module>resource</module>
         <module>gateway</module>
         <module>plugins</module>
+        <module>api</module>
     </modules>
 
     <properties>
